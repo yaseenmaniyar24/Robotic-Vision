@@ -169,15 +169,69 @@ Display and save all processed images.
 
 The complete Python program is available here:
 
-[`code/image_basics.py`](code/image_basics.py)
+import cv2
+import numpy as np
+from google.colab.patches import cv2_imshow
 
+# Load image
+img = cv2.imread('/content/pngtree-artificial-intelligence-robot-on-black-background-rendered-in-3d-x-ray-image_3773982.jpg')
+
+if img is not None:
+
+    # Display original image
+    print("Original Image:")
+    cv2_imshow(img)
+
+    # Save original image
+    cv2.imwrite('/content/original.png', img)
+
+    # -----------------------------
+    # 1. Negative Transformation
+    # -----------------------------
+    img_negative = 255 - img
+
+    print("Negative Image:")
+    cv2_imshow(img_negative)
+
+    cv2.imwrite('/content/negative.png', img_negative)
+
+    # -----------------------------
+    # 2. Brightness Adjustment
+    # -----------------------------
+    beta = 50
+    img_brightness = cv2.addWeighted(
+        img, 1, np.zeros(img.shape, img.dtype), 0, beta
+    )
+
+    print("Brightness Adjusted Image:")
+    cv2_imshow(img_brightness)
+
+    cv2.imwrite('/content/brightness.png', img_brightness)
+
+    # -----------------------------
+    # 3. Contrast Adjustment
+    # -----------------------------
+    alpha = 1.5
+    img_contrast = cv2.convertScaleAbs(
+        img, alpha=alpha, beta=0
+    )
+
+    print("Contrast Adjusted Image:")
+    cv2_imshow(img_contrast)
+
+    cv2.imwrite('/content/contrast.png', img_contrast)
+
+    print("All images processed and saved successfully.")
+
+else:
+    print("Error loading image. Check the file path.")
 ---
 
 ## 🖼️ Results
 
 ### Original Image
+<img width="640" height="359" alt="test image" src="https://github.com/user-attachments/assets/13898b75-5506-4489-97d0-e8ca73d2a152" />
 
-![Original Image](results/original.png)
 
 ### Negative Image
 
