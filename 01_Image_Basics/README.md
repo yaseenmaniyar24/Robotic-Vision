@@ -169,14 +169,14 @@ Display and save all processed images.
 
 The complete Python program is available here:
 
-import cv2
-import numpy as np
-from google.colab.patches import cv2_imshow
+    import cv2
+    import numpy as np
+    from google.colab.patches import cv2_imshow
 
-# Load image
-img = cv2.imread('/content/pngtree-artificial-intelligence-robot-on-black-background-rendered-in-3d-x-ray-image_3773982.jpg')
+    # Load image
+    img = cv2.imread('/content/pngtree-artificial-intelligence-robot-on-black-background-rendered-in-3d-x-ray-image_3773982.jpg')
 
-if img is not None:
+    if img is not None:
 
     # Display original image
     print("Original Image:")
@@ -223,9 +223,9 @@ if img is not None:
 
     print("All images processed and saved successfully.")
 
-else:
-    print("Error loading image. Check the file path.")
----
+    else:
+        print("Error loading image. Check the file path.")
+
 
 ## 🖼️ Results
 
@@ -235,15 +235,18 @@ else:
 
 ### Negative Image
 
-![Negative Image](results/negative.png)
+<img width="640" height="359" alt="Negative " src="https://github.com/user-attachments/assets/f4c9a8e1-a4f5-4ba9-ac50-202939156233" />
+
 
 ### Brightness Adjusted Image
 
-![Brightness Adjusted Image](results/brightness.png)
+<img width="640" height="359" alt="Brightness " src="https://github.com/user-attachments/assets/6c5c4ac0-d3de-4278-9158-e08b1446153f" />
+
 
 ### Contrast Adjusted Image
 
-![Contrast Adjusted Image](results/contrast.png)
+<img width="640" height="359" alt="Contrast" src="https://github.com/user-attachments/assets/e0300586-6404-45fd-94cf-f33093406103" />
+
 
 ---
 
