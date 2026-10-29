@@ -203,6 +203,8 @@ The video file must be uploaded to Google Colab or placed at the specified path.
 
 ### Output
 
+
+
 The program displays the video frames sequentially in the Google Colab notebook.
 
 **Expected output messages:**
